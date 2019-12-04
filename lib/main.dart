@@ -9,40 +9,33 @@ void main() {
 class MyApp extends StatefulWidget {
   @override
   _State createState() => new _State();
+
 }
 
 class _State extends State<MyApp> {
-  int _value = 0;
 
-  void _add() => setState(() => _value++ );
-  void _remove() => setState(() => _value-- );
+  String _value = '';
 
+  void _onClicked() => setState(() => _value = new DateTime.now().toString());
 
- @override
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Home'),
-        backgroundColor: Colors.red,
-        actions: <Widget>[
-          new IconButton(icon:new Icon(Icons.add), onPressed: _add),
-          new IconButton(icon:new Icon(Icons.remove), onPressed: _remove),
-
-        ],
+        title: new Text('Name here'),
       ),
+      floatingActionButton: new FloatingActionButton(
+          onPressed: _onClicked,
+          backgroundColor: Colors.red,
+          mini: true,
+          child: new Icon(Icons.timer),),
       body: new Container(
         padding: new EdgeInsets.all(32.0),
-        child: new Center(
         child: new Column(
           children: <Widget>[
-            new Text (_value.toString(),
-            style: new TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 37.0
-            ),)
+            new Text(_value)
           ],
         ),
-      ),
       ),
     );
   }
