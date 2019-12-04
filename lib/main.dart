@@ -9,31 +9,31 @@ void main() {
 class MyApp extends StatefulWidget {
   @override
   _State createState() => new _State();
-
 }
 
 class _State extends State<MyApp> {
-
-  String _value = '';
-
-  void _onClicked() => setState(() => _value = new DateTime.now().toString());
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Name here'),
       ),
-      floatingActionButton: new FloatingActionButton(
-          onPressed: _onClicked,
-          backgroundColor: Colors.red,
-          mini: true,
-          child: new Icon(Icons.timer),),
+      drawer: new Drawer(
+        child: new Container(
+          padding: new EdgeInsets.all(32.0),
+          child: new Column(
+            children: <Widget>[
+              new Text('Hello World'),
+              new RaisedButton(onPressed: ()=> Navigator.pop(context), child: new Text('click me'),)
+            ],
+          ),
+        ),
+      ),
       body: new Container(
         padding: new EdgeInsets.all(32.0),
         child: new Column(
           children: <Widget>[
-            new Text(_value)
+            new Text('Add Widgets Here')
           ],
         ),
       ),
