@@ -17,7 +17,7 @@ class _State extends State<MyApp> {
   Future _showAlert(BuildContext context, String message) async {
     return showDialog(
         context: context,
-        child:new AlertDialog(
+        builder: (BuildContext context) => new AlertDialog(
           title: new Text(message),
           actions: <Widget>[
             new FlatButton(onPressed: ()=> Navigator.pop(context), child: new Text('ok'))
