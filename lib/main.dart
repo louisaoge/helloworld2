@@ -12,18 +12,12 @@ class MyApp extends StatefulWidget {
   _State createState() => new _State();
 }
 
+
 class _State extends State<MyApp> {
 
-  Future _showAlert(BuildContext context, String message) async {
-    return showDialog(
-        context: context,
-        builder: (BuildContext context) => new AlertDialog(
-          title: new Text(message),
-          actions: <Widget>[
-            new FlatButton(onPressed: ()=> Navigator.pop(context), child: new Text('ok'))
-          ]
-        ) );
-  }
+  TextEditingController _user = new TextEditingController();
+  TextEditingController _pass = new TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +32,23 @@ class _State extends State<MyApp> {
         padding: new EdgeInsets.all(32.0),
         child: new Column(
           children: <Widget>[
-            new Text('Hi'),
-            new RaisedButton(onPressed: () => _showAlert(context, 'Do you like flutter? i do!'),
-              child: new Text('click me') ,)
+            new Text('Please Login'),
+            new Row (
+              children: <Widget>[
+                new Text('Username: '),
+                new Expanded(child: new TextField(controller: _user,))
+              ],
+            ),
+            new Row (
+              children: <Widget>[
+                new Text('Password: '),
+                new Expanded(child: new TextField(controller: _pass,obscureText: true,))
+              ],
+            ),
+            new Padding(
+                padding: new EdgeInsets.all(12.0),
+                child: new RaisedButton(onPressed: ()=> print('login ${_user.text}'), child: new Text('click here'),),
+            )
           ],
         ),
       ),
