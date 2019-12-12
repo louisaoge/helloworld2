@@ -30,26 +30,44 @@ class _State extends State<MyApp> {
 
       body: new Container(
         padding: new EdgeInsets.all(32.0),
-        child: new Column(
-          children: <Widget>[
-            new Text('Please Login'),
-            new Row (
-              children: <Widget>[
-                new Text('Username: '),
-                new Expanded(child: new TextField(controller: _user,))
-              ],
-            ),
-            new Row (
-              children: <Widget>[
-                new Text('Password: '),
-                new Expanded(child: new TextField(controller: _pass,obscureText: true,))
-              ],
-            ),
-            new Padding(
-                padding: new EdgeInsets.all(12.0),
-                child: new RaisedButton(onPressed: ()=> print('login ${_user.text}'), child: new Text('click here'),),
-            )
-          ],
+        child: new Center(
+          child: new Column(
+            children: <Widget>[
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      new Text('Hello World'),
+                      new Text ('how are you?')
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      new Text('Hello World'),
+                      new Text ('how are you?')
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      new Text('Hello World'),
+                      new Text ('how are you?')
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
 
