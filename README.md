@@ -1,4 +1,4 @@
-# helloworld2
+# FlutterApp
 
 A new Flutter project.
 
